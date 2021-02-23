@@ -2,3 +2,12 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+
+<p>Player {{turn}} Turn</p>
+
+<input [(ngModel)]="a" type="text">
+<input [(ngModel)]="b" type="text">
+<button (click)="go()">Go</button>
+<br>
+<br>
+<div *ngFor="let isi of arr">{{isi}}</div>
