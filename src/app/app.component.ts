@@ -32,18 +32,71 @@ export class AppComponent  {
     }
     this.arr[`${this.a}`][`${this.b}`] = this.turn
     alert(this.arr)
-    this.win()
+    this.winhori()
+    this.winver()
   }
 
-  win(){
+  winver(){
     for(let i =0;i<5;i++){
       this.cek = 0
-      if(this.arr[0][i] == "1"){
-
+      for(let j=0;j<5;j++){
+        if(this.arr[j][i] == "1"){
+          this.cek++
+        }
+        else if(this.arr[j][i] == "0"){
+          this.cek--
+        }
+        if(this.cek == 4){
+          break
+        }
+        else if(this.cek == -4){
+          break
+        }
       }
-      else if(this.arr[0][i] == "0"){
-
+      if(this.cek == 4){
+        break
       }
+      else if(this.cek == -4){
+        break
+      }
+    }
+    if(this.cek == 4){
+      alert("Player 1 Win")
+    }
+    else if(this.cek == -4){
+      alert("Player 0 Win")
+    }
+  }
+
+  winhori(){
+    for(let i =0;i<5;i++){
+      this.cek = 0
+      for(let j=0;j<5;j++){
+        if(this.arr[i][j] == "1"){
+          this.cek++
+        }
+        else if(this.arr[i][j] == "0"){
+          this.cek--
+        }
+        if(this.cek == 4){
+          break
+        }
+        else if(this.cek == -4){
+          break
+        }
+      }
+      if(this.cek == 4){
+        break
+      }
+      else if(this.cek == -4){
+        break
+      }
+    }
+    if(this.cek == 4){
+      alert("Player 1 Win")
+    }
+    else if(this.cek == -4){
+      alert("Player 0 Win")
     }
   }
 }
